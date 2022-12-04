@@ -9,6 +9,7 @@ import { ButtonGo } from "/components/Button.jsx";
 import OrderItem, { asPrice } from "/public/libs/order_item.js";
 import style from "/styles/CheckoutTable.module.css";
 import { TEST_ITEMS } from "/utils/test_order_items.js";
+import Paypal from "./Paypal";
 
 export const CheckoutTable = ({ items }) => {
     console.log(items);
@@ -86,7 +87,7 @@ export const CheckoutTable = ({ items }) => {
                         <strong>{asPrice(totalPrice)}</strong>
                     </td>
                     <td className={style.itemQty}>
-                        <Link
+                        {/* <Link
                             href={{
                                 pathname: "/order",
                             }}
@@ -106,7 +107,8 @@ export const CheckoutTable = ({ items }) => {
                             >
                                 Order ({totalQty})
                             </ButtonGo>
-                        </Link>
+                        </Link> */}
+                        <Paypal amount={totalPrice}/>
                     </td>
                 </tr>
             </tbody>
