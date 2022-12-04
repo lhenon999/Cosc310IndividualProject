@@ -108,7 +108,7 @@ export const CheckoutTable = ({ items }) => {
                                 Order ({totalQty})
                             </ButtonGo>
                         </Link> */}
-                        <Paypal amount={totalPrice}/>
+                        <Paypal amount = {totalPrice} cartData = {cartData}/>
                     </td>
                 </tr>
             </tbody>
