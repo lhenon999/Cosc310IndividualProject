@@ -1,7 +1,7 @@
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js'
 import * as React from "react";
-import { Shipment } from './ShipmentPanel';
 import { TEST_ITEMS } from '../utils/test_shipments';
+
 
 // Paypal checkout componenent
 const Paypal = props =>{
@@ -11,7 +11,7 @@ const Paypal = props =>{
 
 
     // Handle change in price during checkout
-    const handleCreatePaypal = (data, actions) => {
+  const handleCreatePaypal = (data, actions) => {
       const orderAmount = amount;
       return actions.order.create({
           purchase_units: [
@@ -39,8 +39,10 @@ const Paypal = props =>{
     //Create new shipment
     TEST_ITEMS.push({shipment_id: id,price: amount,status: 1,priority: 1, date: today_date ,content: content});
 
-    // TODO: clear cart
+    // TODO: Redirect to order page
+
   }
+
 
   return (
     <PayPalScriptProvider>
@@ -55,11 +57,12 @@ const Paypal = props =>{
             onApprove={async (data, actions) => {
             handleApprove(data.orderID);
             const details = await actions.order.capture();
-            alert("\nTransaction completed by " + details.payer.name.given_name + ".\n\nYour order has been confirmed and a shipment has been created \n\nCheck the shipments page for more details\n(Shipment ID: " + id + ")");
+            await alert("\nTransaction completed by " + details.payer.name.given_name + ".\n\nYour order has been confirmed and a shipment has been created \n\nCheck the shipments page for more details\n(Shipment ID: " + id + ")");
           }}
         />
     </PayPalScriptProvider>
-)
+  )
 }
+
 
 export default Paypal

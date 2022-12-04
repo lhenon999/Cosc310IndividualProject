@@ -18,6 +18,8 @@
         "react-device-detect": "^2.2.2",
         "react-dom": "^18.2.0",
         "react-icons": "^4.6.0",
-        "react-markdown": "^8.0.3"
+        "react-markdown": "^8.0.3",
+        "react-router-dom": "^6.4.4",
+        "react-use-navigate": "^0.1.1"
     }
 }

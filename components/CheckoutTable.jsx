@@ -10,6 +10,7 @@ import OrderItem, { asPrice } from "/public/libs/order_item.js";
 import style from "/styles/CheckoutTable.module.css";
 import { TEST_ITEMS } from "/utils/test_order_items.js";
 import Paypal from "./Paypal";
+import { Navigate, Router } from "react-router-dom";
 
 export const CheckoutTable = ({ items }) => {
     console.log(items);
@@ -108,7 +109,7 @@ export const CheckoutTable = ({ items }) => {
                                 Order ({totalQty})
                             </ButtonGo>
                         </Link> */}
-                        <Paypal amount = {totalPrice} cartData = {cartData}/>
+                        <Paypal amount = {totalPrice} cartData = {cartData} />
                     </td>
                 </tr>
             </tbody>
