@@ -7,6 +7,7 @@ const Paypal = props =>{
   const {amount} = props;
   const {cartData} = props;
 
+    // Handle change in price during checkout
     const handleCreatePaypal = (data, actions) => {
       const orderAmount = amount;
       return actions.order.create({
@@ -19,6 +20,9 @@ const Paypal = props =>{
 
   const handleApprove = (orderID) =>{
 
+    // TODO: dynamically proccess shipment
+
+    //Initilize an array of all items in cart
     const content = [];
     for (let i of Object.keys(cartData)) {
       if (i != 0){
@@ -26,10 +30,12 @@ const Paypal = props =>{
       }
     }
 
+    //Create new shipment
     TEST_ITEMS.push({shipment_id: 999,price: 100,status: 1,priority: 1, date: "2021-10-20",content: content});
 
     console.log(TEST_ITEMS);
 
+    //send confirmation message
     alert("Transaction completed by " + details.payer.name.given_name + ". Your order has been confirmed and a shipment has been created");
   }
 
