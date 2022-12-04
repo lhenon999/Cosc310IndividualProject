@@ -3,6 +3,7 @@ import * as React from "react";
 import { Shipment } from './ShipmentPanel';
 import { TEST_ITEMS } from '../utils/test_shipments';
 
+// Paypal checkout componenent
 const Paypal = props =>{
   const {amount} = props;
   const {cartData} = props;
@@ -20,8 +21,6 @@ const Paypal = props =>{
 
   const handleApprove = (orderID) =>{
 
-    // TODO: dynamically proccess shipment
-
     //Initilize an array of all items in cart
     const content = [];
     for (let i of Object.keys(cartData)) {
@@ -30,13 +29,18 @@ const Paypal = props =>{
       }
     }
 
-    //Create new shipment
-    TEST_ITEMS.push({shipment_id: 999,price: 100,status: 1,priority: 1, date: "2021-10-20",content: content});
+    //generate random shipment id from 100-999
+    const id = Math.floor(Math.random()*(999-100+1)+100);
 
+    //Getting today's date 
+    const today_date = new Date().toISOString().split('T')[0];
+
+    //Create new shipment
+    TEST_ITEMS.push({shipment_id: id,price: amount,status: 1,priority: 1, date: today_date ,content: content});
     console.log(TEST_ITEMS);
 
     //send confirmation message
-    alert("Transaction completed by " + details.payer.name.given_name + ". Your order has been confirmed and a shipment has been created");
+    alert("Transaction completed by " + details.payer.name.given_name + ". Your order has been confirmed and a shipment has been created (Check the shipments page for more details)");
   }
 
   return (
