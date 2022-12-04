@@ -7,6 +7,8 @@ import { TEST_ITEMS } from '../utils/test_shipments';
 const Paypal = props =>{
   const {amount} = props;
   const {cartData} = props;
+  const id = 0;
+
 
     // Handle change in price during checkout
     const handleCreatePaypal = (data, actions) => {
@@ -20,7 +22,6 @@ const Paypal = props =>{
   }
 
   const handleApprove = (orderID) =>{
-
     //Initilize an array of all items in cart
     const content = [];
     for (let i of Object.keys(cartData)) {
@@ -30,17 +31,15 @@ const Paypal = props =>{
     }
 
     //generate random shipment id from 100-999
-    const id = Math.floor(Math.random()*(999-100+1)+100);
+    id = Math.floor(Math.random()*(999-100+1)+100);
 
     //Getting today's date 
     const today_date = new Date().toISOString().split('T')[0];
 
     //Create new shipment
     TEST_ITEMS.push({shipment_id: id,price: amount,status: 1,priority: 1, date: today_date ,content: content});
-    console.log(TEST_ITEMS);
 
-    //send confirmation message
-    alert("Transaction completed by " + details.payer.name.given_name + ". Your order has been confirmed and a shipment has been created (Check the shipments page for more details)");
+    // TODO: clear cart
   }
 
   return (
@@ -54,8 +53,9 @@ const Paypal = props =>{
             createOrder={(data, actions) => handleCreatePaypal(data, actions)}
             forceReRender={[amount]}
             onApprove={async (data, actions) => {
-              const details = await actions.order.capture();
-              handleApprove(data.orderID);
+            handleApprove(data.orderID);
+            const details = await actions.order.capture();
+            alert("\nTransaction completed by " + details.payer.name.given_name + ".\n\nYour order has been confirmed and a shipment has been created \n\nCheck the shipments page for more details\n(Shipment ID: " + id + ")");
           }}
         />
     </PayPalScriptProvider>
