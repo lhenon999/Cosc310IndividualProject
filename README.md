@@ -42,7 +42,20 @@ Password: Spd9z=pI
 8. Once the confirmation message is displayed, go to the shipment page to view the newly created shipment
 
 
-## Feature 2: Cart Checkout (Paypal Sandbox API)
+## Feature 2: Warehouse Localisation (Google Maps Javascript API) 
+
+This feature utilises the google maps API to display a visual representation of warehouse location on the warehouse page. The map shows a marker at the address of each warehouse and changes dynamically as the selected warehouse is changed. The address can be clicked to open google maps in a new tab to the corresponding address.
+
+![map3](https://user-images.githubusercontent.com/77656081/205574854-9b98b936-db05-4a2a-b2bf-b8035dce3062.png)
+
+![map1](https://user-images.githubusercontent.com/77656081/205574746-5758da15-ef71-4ed5-ba23-57009e48ed51.png)
+
+![map2](https://user-images.githubusercontent.com/77656081/205574808-3b2e597e-8350-4837-99fe-5ea4607b2472.png)
+
+- sattelite button bottom left 
+- view larger map links to google maps with marker 
+- directions links to google maps with directions 
+- zoom buttons bottom right or ⌘ + scroll
 
 # From Assignment 3: 
 
