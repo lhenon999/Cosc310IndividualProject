@@ -4,6 +4,7 @@ import React from "react";
 import styles from "/styles/InventoryPanel.module.css";
 import { useState, useEffect, useRef } from "react";
 
+
 export class Warehouse {
     constructor(
         warehouse_id,

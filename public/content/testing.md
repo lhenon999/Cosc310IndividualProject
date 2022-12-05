@@ -95,7 +95,7 @@ You can write multiple `it()` blocks inside a `describe()` block to test multipl
 Once you're satisfied with the component tests, you can run them by running the following command:
 
 ```bash
-yarn cypress
+er
 ```
 
 This will open the Cypress test runner. Select `Component Testing`. Then select the browser you'd like to run the tests in. Choose the component you'd like to test and then your results will be displayed.
