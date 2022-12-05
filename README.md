@@ -1,4 +1,4 @@
-# Individual Project
+# Hospital IMS Project Individual Project
 
 ## Feature 1: Cart Checkout (Paypal Sandbox API)
 
@@ -26,7 +26,6 @@ Password: Spd9z=pI
 ## Feature 2: Cart Checkout (Paypal Sandbox API)
 
 # From Assignment 3: 
-# Hospital IMS Project
 
 ## Members
 
