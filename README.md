@@ -8,10 +8,10 @@ The first feature implemented is a fully functional cart checkout page with a pa
 
 Paypal sandbox Account: 
 
+use this generated paypal sandbox bussiness account to simulate the hospital business account. 
+
 Username: sb-oe747q23134126@business.example.com
 Password: Spd9z=pI
-
-use the generated paypal sandbox bussiness account to simulate the hospital business account. 
 
 1. Add some items to the cart
 2. click on the cart to go to the checkout page 
