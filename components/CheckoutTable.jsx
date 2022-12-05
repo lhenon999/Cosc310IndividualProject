@@ -12,6 +12,7 @@ import { TEST_ITEMS } from "/utils/test_order_items.js";
 import Paypal from "./Paypal";
 import { Navigate, Router } from "react-router-dom";
 
+
 export const CheckoutTable = ({ items }) => {
     console.log(items);
     const [cartData, setCartData] = useState(items);
@@ -70,50 +71,50 @@ export const CheckoutTable = ({ items }) => {
 
     // Render
     return (
-        <table className={style.checkoutTable}>
-            <thead>
-                <tr className={style.headerRow}>
-                    <th className={style.itemName}>Item Name</th>
-                    <th className={style.itemPrice}>Price</th>
-                    <th className={style.itemQty}>Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                {cart}
-                <tr>
-                    <td className={style.itemName}>
-                        <strong>Total:</strong>
-                    </td>
-                    <td className={style.itemPrice}>
-                        <strong>{asPrice(totalPrice)}</strong>
-                    </td>
-                    <td className={style.itemQty}>
-                        {/* <Link
-                            href={{
-                                pathname: "/order",
-                            }}
-                        >
-                            <ButtonGo
-                                w="100%"
-                                m="0 auto"
-                                title="Order Now"
-                                disabled={totalQty === 0 || isNaN(totalPrice)}
-                                onClick={() =>
-                                    alert(
-                                        `Ordered ${totalQty} items for ${asPrice(
-                                            totalPrice
-                                        )}`
-                                    )
-                                }
+            <table className={style.checkoutTable}>
+                <thead>
+                    <tr className={style.headerRow}>
+                        <th className={style.itemName}>Item Name</th>
+                        <th className={style.itemPrice}>Price</th>
+                        <th className={style.itemQty}>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cart}
+                    <tr>
+                        <td className={style.itemName}>
+                            <strong>Total:</strong>
+                        </td>
+                        <td className={style.itemPrice}>
+                            <strong>{asPrice(totalPrice)}</strong>
+                        </td>
+                        <td className={style.itemQty}>
+                            {/* <Link
+                                href={{
+                                    pathname: "/order",
+                                }}
                             >
-                                Order ({totalQty})
-                            </ButtonGo>
-                        </Link> */}
-                        <Paypal amount = {totalPrice} cartData = {cartData} />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                                <ButtonGo
+                                    w="100%"
+                                    m="0 auto"
+                                    title="Order Now"
+                                    disabled={totalQty === 0 || isNaN(totalPrice)}
+                                    onClick={() =>
+                                        alert(
+                                            `Ordered ${totalQty} items for ${asPrice(
+                                                totalPrice
+                                            )}`
+                                        )
+                                    }
+                                >
+                                    Order ({totalQty})
+                                </ButtonGo>
+                            </Link> */}
+                            <Paypal amount = {totalPrice} cartData = {cartData} />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     );
 };
 

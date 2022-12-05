@@ -40,6 +40,7 @@ const Paypal = props =>{
     TEST_ITEMS.push({shipment_id: id,price: amount,status: 1,priority: 1, date: today_date ,content: content});
 
     // TODO: Redirect to order page
+    // TODO: Error handling
 
   }
 
