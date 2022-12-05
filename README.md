@@ -6,6 +6,8 @@ Leo Henon (14983282)
 
 The first feature implemented is a fully functional cart checkout page with a payment processor. This feature uses the Paypal sandbox API to simulate a paypal transaction. When items are added to the cart, you can now click the cart which brings you to a checkout page where the quantity of items in the cart can be edited. The checkout page features a paypal button which allows you to make a payment for the order. Once the payment is proccessed and approved, the system displays an output message that a new shipment has been created and provides the user with the shipment ID. The corresesponding shipment can then be viewed in the previously created shipments page. The paypal checkout button updates dynamically with items in the cart; when item quantities are changed, the paypal button reflects the corresponding price changes and paypal automatically converts the USD price into CAD.
 
+![image](/repository/assets/image_checkout.png?raw=true "Chekcout Page")
+
 ### How to use:
 
 Paypal sandbox Account: 
