@@ -446,10 +446,6 @@ export function InventoryPanel({ inventoryItems }) {
                             ))}
                     </ul>
                 </div>
-                <div className={styles.inventory_panel__history}>
-                    <h1>Toronto warehouse location</h1>
-                    <iframe width="100%" height="800dp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1854&amp;height=400&amp;hl=en&amp;q=100%20Miranda%20Ave%20Toronto+(Warehouse%20456)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-                </div>
             </div>
         );
     } else {
