@@ -1,4 +1,4 @@
-# Hospital IMS Project Individual Project
+# Hospital IMS: Individual Project
 
 ## Feature 1: Cart Checkout (Paypal Sandbox API)
 
