@@ -3,6 +3,7 @@
 import React from "react";
 import styles from "/styles/InventoryPanel.module.css";
 import { useState, useEffect, useRef } from "react";
+import Google from ".//GoogleMaps.jsx";
 
 
 export class Warehouse {
@@ -301,74 +302,228 @@ export function InventoryPanel({ inventoryItems }) {
         </select>
     );
 
-    return (
-        <div className={styles.inventory_panel}>
-            <div className={styles.inventory_panel__warehouse}>
-                <h1>Warehouse: {warehouseMenu}</h1>
-                <p>Total Space: {warehouseSpace}</p>
-                <p>Remaining Space: {warehouseSpaceRemaining}</p>
-            </div>
-            <div className={styles.inventory_panel__inventory}>
-                <h1>Inventory</h1>
-                <ul>
-                    {itemList.map((item, index) => (
-                        <li key={index}>
-                            <p>
-                                Item ID: {item.item_id} Quantity:{" "}
-                                {item.item_quantity}
-                            </p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
-            {/* add/remove */}
-            <div className={styles.inventory_panel__add_remove}>
-                <h1>Add/Remove Item</h1>
-                <form>
-                    <label>
-                        Item ID:
-                        <input
-                            type="text"
-                            value={item}
-                            onChange={(e) => {
-                                setItem(e.target.value);
-                            }}
-                        />
-                    </label>
-                    <br />
-                    <label>
-                        Quantity:
-                        <input
-                            type="number"
-                            value={quantity}
-                            onChange={(e) => {
-                                setQuantity(e.target.value);
-                            }}
-                        />
-                    </label>
-                    <br />
-                    <input type="button" value="Add" onClick={addItem} />
-                    <input type="button" value="Remove" onClick={removeItem} />
-                </form>
-            </div>
-            <div className={styles.inventory_panel__history}>
-                <h1>History</h1>
-                <ul>
-                    {warehouseList[warehouse].changes
-                        .reverse()
-                        .map((change, index) => (
+    if (warehouse==0){
+        return (
+            <div className={styles.inventory_panel}>
+                <div className={styles.inventory_panel__warehouse}>
+                    <h1>Warehouse: {warehouseMenu}</h1>
+                    <p>Total Space: {warehouseSpace}</p>
+                    <p>Remaining Space: {warehouseSpaceRemaining}</p>
+                </div>
+                <div className={styles.inventory_panel__inventory}>
+                    <h1>Inventory</h1>
+                    <ul>
+                        {itemList.map((item, index) => (
                             <li key={index}>
                                 <p>
-                                    {change.status} Item ID: {change.item_id} Quantity:{" "}
-                                    {change.total_quantity}
+                                    Item ID: {item.item_id} Quantity:{" "}
+                                    {item.item_quantity}
                                 </p>
                             </li>
                         ))}
-                </ul>
+                    </ul>
+                </div>
+    
+                {/* add/remove */}
+                <div className={styles.inventory_panel__add_remove}>
+                    <h1>Add/Remove Item</h1>
+                    <form>
+                        <label>
+                            Item ID:
+                            <input
+                                type="text"
+                                value={item}
+                                onChange={(e) => {
+                                    setItem(e.target.value);
+                                }}
+                            />
+                        </label>
+                        <br />
+                        <label>
+                            Quantity:
+                            <input
+                                type="number"
+                                value={quantity}
+                                onChange={(e) => {
+                                    setQuantity(e.target.value);
+                                }}
+                            />
+                        </label>
+                        <br />
+                        <input type="button" value="Add" onClick={addItem} />
+                        <input type="button" value="Remove" onClick={removeItem} />
+                    </form>
+                </div>
+                <div className={styles.inventory_panel__history}>
+                    <h1>Vancouver warehouse location:</h1>
+                        <iframe width="100%" height="800dp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1854&amp;height=400&amp;hl=en&amp;q=8934%20Shaughnessy%20St%20vancouver+(Warehouse%20123)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                </div>
+                <div className={styles.inventory_panel__history}>
+                    <h1>History</h1>
+                    <ul>
+                        {warehouseList[warehouse].changes
+                            .reverse()
+                            .map((change, index) => (
+                                <li key={index}>
+                                    <p>
+                                        {change.status} Item ID: {change.item_id} Quantity:{" "}
+                                        {change.total_quantity}
+                                    </p>
+                                </li>
+                            ))}
+                    </ul>
+                </div>
             </div>
-        </div>
-    );
+        );
+    } else if (warehouse==1){
+        return (
+            <div className={styles.inventory_panel}>
+                <div className={styles.inventory_panel__warehouse}>
+                    <h1>Warehouse: {warehouseMenu}</h1>
+                    <p>Total Space: {warehouseSpace}</p>
+                    <p>Remaining Space: {warehouseSpaceRemaining}</p>
+                </div>
+                <div className={styles.inventory_panel__inventory}>
+                    <h1>Inventory</h1>
+                    <ul>
+                        {itemList.map((item, index) => (
+                            <li key={index}>
+                                <p>
+                                    Item ID: {item.item_id} Quantity:{" "}
+                                    {item.item_quantity}
+                                </p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+    
+                {/* add/remove */}
+                <div className={styles.inventory_panel__add_remove}>
+                    <h1>Add/Remove Item</h1>
+                    <form>
+                        <label>
+                            Item ID:
+                            <input
+                                type="text"
+                                value={item}
+                                onChange={(e) => {
+                                    setItem(e.target.value);
+                                }}
+                            />
+                        </label>
+                        <br />
+                        <label>
+                            Quantity:
+                            <input
+                                type="number"
+                                value={quantity}
+                                onChange={(e) => {
+                                    setQuantity(e.target.value);
+                                }}
+                            />
+                        </label>
+                        <br />
+                        <input type="button" value="Add" onClick={addItem} />
+                        <input type="button" value="Remove" onClick={removeItem} />
+                    </form>
+                </div>
+                <div className={styles.inventory_panel__history}>
+                    <h1>Toronto warehouse location</h1>
+                    <iframe width="100%" height="800dp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1854&amp;height=400&amp;hl=en&amp;q=100%20Miranda%20Ave%20Toronto+(Warehouse%20456)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                </div>
+                <div className={styles.inventory_panel__history}>
+                    <h1>History</h1>
+                    <ul>
+                        {warehouseList[warehouse].changes
+                            .reverse()
+                            .map((change, index) => (
+                                <li key={index}>
+                                    <p>
+                                        {change.status} Item ID: {change.item_id} Quantity:{" "}
+                                        {change.total_quantity}
+                                    </p>
+                                </li>
+                            ))}
+                    </ul>
+                </div>
+            </div>
+        );
+    } else {
+        return (
+            <div className={styles.inventory_panel}>
+                <div className={styles.inventory_panel__warehouse}>
+                    <h1>Warehouse: {warehouseMenu}</h1>
+                    <p>Total Space: {warehouseSpace}</p>
+                    <p>Remaining Space: {warehouseSpaceRemaining}</p>
+                </div>
+                <div className={styles.inventory_panel__inventory}>
+                    <h1>Inventory</h1>
+                    <ul>
+                        {itemList.map((item, index) => (
+                            <li key={index}>
+                                <p>
+                                    Item ID: {item.item_id} Quantity:{" "}
+                                    {item.item_quantity}
+                                </p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+    
+                {/* add/remove */}
+                <div className={styles.inventory_panel__add_remove}>
+                    <h1>Add/Remove Item</h1>
+                    <form>
+                        <label>
+                            Item ID:
+                            <input
+                                type="text"
+                                value={item}
+                                onChange={(e) => {
+                                    setItem(e.target.value);
+                                }}
+                            />
+                        </label>
+                        <br />
+                        <label>
+                            Quantity:
+                            <input
+                                type="number"
+                                value={quantity}
+                                onChange={(e) => {
+                                    setQuantity(e.target.value);
+                                }}
+                            />
+                        </label>
+                        <br />
+                        <input type="button" value="Add" onClick={addItem} />
+                        <input type="button" value="Remove" onClick={removeItem} />
+                    </form>
+                </div>
+                <div className={styles.inventory_panel__history}>
+                    <h1>Montreal warehouse location</h1>
+                    <iframe width="100%" height="800dp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1854&amp;height=400&amp;hl=en&amp;q=1446%20Crescent%20St%20Montreal+(Warehouse%20789)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                </div>
+                <div className={styles.inventory_panel__history}>
+                    <h1>History</h1>
+                    <ul>
+                        {warehouseList[warehouse].changes
+                            .reverse()
+                            .map((change, index) => (
+                                <li key={index}>
+                                    <p>
+                                        {change.status} Item ID: {change.item_id} Quantity:{" "}
+                                        {change.total_quantity}
+                                    </p>
+                                </li>
+                            ))}
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+
+   
 }
 
 export default InventoryPanel;
