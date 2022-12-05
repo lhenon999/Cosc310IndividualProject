@@ -50,8 +50,6 @@ This feature utilises the google maps API to display a visual representation of 
 
 ![map1](https://user-images.githubusercontent.com/77656081/205574746-5758da15-ef71-4ed5-ba23-57009e48ed51.png)
 
-![map2](https://user-images.githubusercontent.com/77656081/205574808-3b2e597e-8350-4837-99fe-5ea4607b2472.png)
-
 - sattelite button bottom left 
 - view larger map links to google maps with marker 
 - directions links to google maps with directions 
