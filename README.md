@@ -1,3 +1,31 @@
+#Individual Project
+
+## Feature 1: Cart Checkout (Paypal Sandbox API)
+
+The first feature implemented is a fully functional cart checkout page with a payment processor. This feature uses the Paypal sandbox API to simulate a paypal transaction. When items are added to the cart, you can now click the cart which brings you to a checkout page where the quantity of items in the cart can be edited. The checkout page features a paypal button which allows you to make a payment for the order. Once the payment is proccessed and approved, the system displays an output message that a new shipment has been created and provides the user with the shipment ID. The corresesponding shipment can then be viewed in the previously created shipments page. The paypal checkout button updates dynamically with items in the cart; when item quantities are changed, the paypal button reflects the corresponding price changes and paypal automatically converts the USD price into CAD.
+
+### How to use:
+
+Paypal sandbox Account: 
+
+Username: sb-oe747q23134126@business.example.com
+Password: Spd9z=pI
+
+use the generated paypal sandbox bussiness account to simulate the hospital business account. 
+
+1. Add some items to the cart
+2. click on the cart to go to the checkout page 
+3. Edit item quantities as required 
+4. click the paypal checkout button and login using the sandbox account 
+5. Choose the address to ship the shipment to (the account has 3 addresses created to simulate the 3 test warehouses)
+6. Choose the preffered payment method (the account has a simulated credit card and bank account with up to $3000 CAD funding) 
+7. Click complete purschase
+8. Once the confirmation message is displayed, go to the shipment page to view the newly created shipment
+
+
+## Feature 2: Cart Checkout (Paypal Sandbox API)
+
+# From Assignment 3: 
 # Hospital IMS Project
 
 ## Members
