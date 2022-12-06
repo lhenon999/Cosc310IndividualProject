@@ -308,6 +308,7 @@ export function InventoryPanel({ inventoryItems }) {
         //* Let warehouse requirements be (ID, minimum quantity): (123,2),(456,2),(789,1),(101,5),(102,5),(145,0) for all warehouses
         //* If a warehouse has less than minimum quantity for an item, display an alert on the page
 
+        //* same reqs for all warehouses for simplicity purposes
         const warehouse_reqs = [{item_id: 123, req_quantity: 2},
                                 {item_id: 456, req_quantity: 2},
                                 {item_id: 789, req_quantity: 3},
