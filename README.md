@@ -4,7 +4,11 @@ Leo Henon (14983282)
 
 ## Feature 1: Cart Checkout (Paypal API)
 
-The first feature implemented is a fully functional cart checkout page with a payment processor. This feature uses the Paypal API with a sandbox account to simulate a paypal transaction. When items are added to the cart, you can now click the cart which brings you to a checkout page where the quantity of items in the cart can be edited. The checkout page features a paypal button which allows you to make a payment for the order. Once the payment is proccessed and approved, the system displays an output message that a new shipment has been created and provides the user with the shipment ID. The corresesponding shipment can then be viewed in the previously created shipments page. The paypal checkout button updates dynamically with items in the cart; when item quantities are changed, the paypal button reflects the corresponding price changes and paypal automatically converts the USD price into CAD.
+The first feature implemented is a fully functional cart checkout page with a payment processor. This feature uses the Paypal API with a sandbox account to simulate a paypal transaction. When items are added to the cart, you can now click the cart which brings you to a checkout page where the quantity of items in the cart can be edited. The checkout page features a paypal button which allows you to make a payment for the order. 
+
+Once the payment is proccessed and approved, the system displays an output message that a new shipment has been created and provides the user with the shipment ID. 
+
+The corresesponding shipment can then be viewed in the previously created shipments page. The paypal checkout button updates dynamically with items in the cart; when item quantities are changed, the paypal button reflects the corresponding price changes.
 
 Checkout Page:
 
@@ -57,7 +61,7 @@ This feature represents two components that were added to the warehouse page. Th
 
 The next component is the alerts panel, which displays alerts based on a list of requirements for each warehouse. To test this feature, different prop items have been added to inventory of each warehouse. The list of requirements features different item ids and associated minimum quantity that is required at a warehouse. The alerts component displays an alert if the inventory of the selected warehouse has less of an item than is required. 
 
-For example, if a warehouse is required to have at least 5 of item 123 but there is only 4 in it's inventory, then and alert will be displayed to notify the user that the warehouse is low on item 123.
+For example, if a warehouse is required to have at least 5 of item 123 but there is only 4 in it's inventory, then an alert will be displayed to notify the user that the warehouse is low on item 123.
 
 The alerts componenet changes dynamically based on the selected warehouse. Likewise, if items are added/removed to/from the warehouse, the alerts will change accordingly.
 
