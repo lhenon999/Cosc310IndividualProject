@@ -2,6 +2,11 @@
 
 Leo Henon (14983282)
 
+## APIs used: 
+
+1. Paypal API
+2. Google Maps Javascript API
+
 ## Feature 1: Cart Checkout (Paypal API)
 
 The first feature implemented is a fully functional cart checkout page with a payment processor. This feature uses the Paypal API with a sandbox account to simulate a paypal transaction. When items are added to the cart, you can now click the cart which brings you to a checkout page where the quantity of items in the cart can be edited. The checkout page features a paypal button which allows you to make a payment for the order. 
