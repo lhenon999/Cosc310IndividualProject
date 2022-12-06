@@ -302,6 +302,50 @@ export function InventoryPanel({ inventoryItems }) {
         </select>
     );
 
+    function AlertsPanel() {
+
+        //* Initial test inventory items IDs are (123,456,789,101,102,145)
+        //* Let warehouse requirements be (ID, minimum quantity): (123,2),(456,2),(789,1),(101,5),(102,5),(145,0) for all warehouses
+        //* If a warehouse has less than minimum quantity for an item, display an alert on the page
+
+        const warehouse_reqs = [{item_id: 123, req_quantity: 2},
+                                {item_id: 456, req_quantity: 2},
+                                {item_id: 789, req_quantity: 3},
+                                {item_id: 101, req_quantity: 5},
+                                {item_id: 102, req_quantity: 5}
+        ];
+    
+        const alerts = [];
+
+        let current_warehouse = warehouseList[warehouse];
+        // Produce alerts
+
+        warehouse_reqs.forEach((requirement) =>{
+            let found = false;
+            current_warehouse.inventory.forEach((inventory) =>{
+                        if (inventory.item_id == requirement.item_id){
+                            found = true;
+                            if (inventory.item_quantity<requirement.req_quantity){
+                                alerts.push("Warehouse is low on item " + requirement.item_id + ", consider restocking (required: " + requirement.req_quantity + " inventory: " + inventory.item_quantity + ") !!!");
+                            }
+                        }
+                });
+                if (found == false){
+                    alerts.push("Warehouse is low on item " + requirement.item_id + ", consider restocking (required: " + requirement.req_quantity + " inventory: 0) !!!");
+                }
+            });
+
+        return( 
+            <div>
+                <div className={styles.inventory_panel__history}>
+                    <h1>Alerts:</h1>
+                    {alerts.map(txt => <p style={{ color: 'red' }}>{txt}</p>)}
+                </div>
+            </div>
+        );
+
+    }
+
     if (warehouse==0){
         return (
             <div className={styles.inventory_panel}>
@@ -358,6 +402,7 @@ export function InventoryPanel({ inventoryItems }) {
                     <h1>Vancouver warehouse location:</h1>
                         <iframe width="100%" height="800dp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1854&amp;height=400&amp;hl=en&amp;q=8934%20Shaughnessy%20St%20vancouver+(Warehouse%20123)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                 </div>
+                    <AlertsPanel/>
                 <div className={styles.inventory_panel__history}>
                     <h1>History</h1>
                     <ul>
@@ -431,6 +476,7 @@ export function InventoryPanel({ inventoryItems }) {
                     <h1>Toronto warehouse location</h1>
                     <iframe width="100%" height="800dp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1854&amp;height=400&amp;hl=en&amp;q=100%20Miranda%20Ave%20Toronto+(Warehouse%20456)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                 </div>
+                <AlertsPanel/>
                 <div className={styles.inventory_panel__history}>
                     <h1>History</h1>
                     <ul>
@@ -504,6 +550,7 @@ export function InventoryPanel({ inventoryItems }) {
                     <h1>Montreal warehouse location</h1>
                     <iframe width="100%" height="800dp" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1854&amp;height=400&amp;hl=en&amp;q=1446%20Crescent%20St%20Montreal+(Warehouse%20789)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                 </div>
+                <AlertsPanel/>
                 <div className={styles.inventory_panel__history}>
                     <h1>History</h1>
                     <ul>
