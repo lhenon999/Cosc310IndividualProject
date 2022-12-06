@@ -224,3 +224,20 @@ https://github.com/remarkjs/react-markdown
 ### License
 
 ---
+
+## API
+
+Google Maps JavaScript API
+
+### Source
+
+https://developers.google.com/maps/documentation/javascript/overview
+
+## API
+
+Paypal API
+
+### Source
+
+https://developer.paypal.com/home
+
