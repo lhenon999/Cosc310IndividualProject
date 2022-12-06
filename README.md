@@ -42,9 +42,9 @@ Password: Spd9z=pI
 8. Once the confirmation message is displayed, go to the shipment page to view the newly created shipment
 
 
-## Feature 2: Warehouse Localisation (Google Maps Javascript API) 
+## Feature 2: Warehouse Localisation & Alerts (Google Maps Javascript API) 
 
-This feature utilises the google maps API to display a visual representation of warehouse location on the warehouse page. The map shows a marker at the address of each warehouse and changes dynamically as the selected warehouse is changed. The address can be clicked to open google maps in a new tab to the corresponding address.
+This feature represents two components that were added to the warehouse page. The first is warehouse localisation which utilises the google maps API to display a visual representation of warehouses' location. The map shows a marker at the address of each warehouse and changes dynamically as the selected warehouse is changed. The address can be clicked to open google maps in a new tab to the corresponding address.
 
 ![map3](https://user-images.githubusercontent.com/77656081/205574854-9b98b936-db05-4a2a-b2bf-b8035dce3062.png)
 
@@ -54,6 +54,22 @@ This feature utilises the google maps API to display a visual representation of 
 - view larger map links to google maps with marker 
 - directions links to google maps with directions 
 - zoom buttons bottom right or ⌘ + scroll
+
+The next component is the alerts panel, which displays alerts based on a list of requirements for each warehouse. To test this feature, different test items have been added to inventory of each warehouse. The list of requirements features different item ids and associated minimum quantity that is required at a warehouse. The alerts component displays an alert if the inventory of the selected warehouse has less of an item than is required. 
+
+For example, if a warehouse is required to have at least 5 of item 123 but there is only 4 in it's inventory, then and alert will be displayed to notify the user that the warehouse is low on item 123.
+
+The alerts componenet changes dynamically based on the selected warehouse. Likewise, if items are added/removed to/from the warehouse, the alerts will change accordingly.
+
+Example: 
+
+![Screen Shot 2022-12-05 at 9 04 57 PM](https://user-images.githubusercontent.com/77656081/205820774-20223521-fdcd-4d13-8870-d65ef5f58782.png)
+
+Here the warehouse requires 2 of item 456, if we add 2 item 456s to the warehouse than the alert disappears. 
+
+![Screen Shot 2022-12-05 at 9 15 11 PM](https://user-images.githubusercontent.com/77656081/205822619-4b681505-f145-47b1-bcea-95e98d57194e.png)
+
+![Screen Shot 2022-12-05 at 9 15 39 PM](https://user-images.githubusercontent.com/77656081/205822608-b5eae6bc-8a3a-48ff-9d5c-8db1e2c169b6.png)
 
 # From Assignment 3: 
 
