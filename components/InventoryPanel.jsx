@@ -4,7 +4,6 @@ import React from "react";
 import styles from "/styles/InventoryPanel.module.css";
 import { useState, useEffect, useRef } from "react";
 import Google from ".//GoogleMaps.jsx";
-import AlertsPanel from "./AlertsPanel.jsx";
 
 
 export class Warehouse {
