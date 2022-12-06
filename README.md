@@ -55,7 +55,7 @@ This feature represents two components that were added to the warehouse page. Th
 - directions links to google maps with directions 
 - zoom buttons bottom right or ⌘ + scroll
 
-The next component is the alerts panel, which displays alerts based on a list of requirements for each warehouse. To test this feature, different test items have been added to inventory of each warehouse. The list of requirements features different item ids and associated minimum quantity that is required at a warehouse. The alerts component displays an alert if the inventory of the selected warehouse has less of an item than is required. 
+The next component is the alerts panel, which displays alerts based on a list of requirements for each warehouse. To test this feature, different prop items have been added to inventory of each warehouse. The list of requirements features different item ids and associated minimum quantity that is required at a warehouse. The alerts component displays an alert if the inventory of the selected warehouse has less of an item than is required. 
 
 For example, if a warehouse is required to have at least 5 of item 123 but there is only 4 in it's inventory, then and alert will be displayed to notify the user that the warehouse is low on item 123.
 
